@@ -8,3 +8,7 @@ Que cosas necesitaria la interfaz?
 -Informacion en alguna parte de la pantalla sobre las propiedades que cumple tu grafo.  Cuando cliqueas una propiedad te da aun mas informacion sobre tal
 -La opcion para borrar nodos/aristas
 
+Una vez que tenemos las bases, como podemos hacer para que sea mas ludico y pedagogico?
+Ideas Potenciales:
+Hacer que sea al estilo my little alchemy pero con grafos y la idea es desbloquear todas las propiedades
+Hacer algun modo para testearte si es que queres aprender alguna propiedad en especifico. IA?
