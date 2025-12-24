@@ -1,3 +1,4 @@
+grafo = new Grafo()
 function setup() {
     windowWidth=1300
     windowHeight=850
@@ -15,6 +16,7 @@ function windowResized() {
 }
 
 function mouseClicked(event) {
-  console.log(event);
-  circle(mouseX, mouseY, 25);
+    console.log(event);
+    
+    circle(mouseX, mouseY, 25);
 }
