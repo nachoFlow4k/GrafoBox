@@ -1,7 +1,8 @@
 grafo = new Grafo()
 function setup() {
-
-  createCanvas(500, windowHeight);
+    windowWidth=1300
+    windowHeight=850
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
