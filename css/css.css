@@ -1,0 +1,21 @@
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor-padre {
+    display: flex;
+    flex-direction: column; /* Apila los elementos uno sobre otro */
+    height: 100vh;          /* 100% de la altura de la ventana (viewport) */
+    margin: 0;
+  }
+  
+
+#freeGraphCanvas {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    width: 100%;
+    background-color: blueviolet;
+}
