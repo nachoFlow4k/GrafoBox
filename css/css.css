@@ -1,7 +1,7 @@
 body {
-    height: 100%;
-    padding: 0;
-    margin: 0;
+    margin: 60;
+    width: 600px;
+    height: 300px;
 }
 
 .contenedor-padre {
@@ -12,6 +12,13 @@ body {
   }
   
 canvas {
-    border: 2px solid black;
-    margin: auto;
+position: absolute; /* Key property for specific placement */
+    top: 100px;          /* 50 pixels down from the top */
+    left: 0px;        /* 100 pixels from the left */
+    width: 200px;       /* Width of the rectangle */
+    height: 150px;      /* Height of the rectangle */
+    background-color: red; /* Color of the rectangle */
+    /* Optional: other styling */
+    border: 1px solid black;
+    z-index: 10; /* Ensures it's above other content if needed */
 }
