@@ -3,7 +3,11 @@ function setup() {
 }
 
 function draw() {
-  background(0, 100, 200);
+  if (mouseIsPressed) {
+    background(0, 255, 0);
+  } else {
+    background(32);
+  }
 }
 
 function windowResized() {
