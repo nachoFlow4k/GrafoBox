@@ -1,5 +1,7 @@
+grafo = new Grafo()
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+
+  createCanvas(500, windowHeight);
 }
 
 function draw() {
@@ -13,6 +15,7 @@ function windowResized() {
 }
 
 function mouseClicked(event) {
-  console.log(event);
-  circle(mouseX, mouseY, 25);
+    console.log(event);
+    
+    circle(mouseX, mouseY, 25);
 }
