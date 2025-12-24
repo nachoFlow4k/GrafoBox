@@ -4,9 +4,7 @@ function setup() {
 
 function draw() {
   if (mouseIsPressed) {
-    background(0, 255, 0);
-  } else {
-    background(32);
+    circle(mouseX, mouseY, 25);
   }
 }
 
