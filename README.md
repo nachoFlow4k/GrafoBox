@@ -16,4 +16,6 @@ Hacer algun modo para testearte si es que queres aprender alguna propiedad en es
 
 ### Documentacion
 
-Para la documentación, usamos [MkDocs](https://www.mkdocs.org/)
++ Para la documentación, usamos [MkDocs](https://www.mkdocs.org/)
+
++ Para poder correrlo localmente hacer `pip install -r requirements.txt`
