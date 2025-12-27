@@ -1,6 +1,15 @@
 class Grafo {
+
+    vertices;
+    aristas;
+
     constructor() {
-        this.vertice = new Set();
+        this.vertices = new Set();
         this.aristas = new Set();
     }
+
+    listarVertices() {
+        return "[" + Array.from(this.aristas).join(", ") + "]"
+    }
+
 }
