@@ -25,3 +25,5 @@ Hacer algun modo para testearte si es que queres aprender alguna propiedad en es
 
 + Para el testing, integramos Jest como framework de testing
 + Es necesario instalar la dependencia por medio de npm siguiendo las instrucciones en [página web](https://jestjs.io/docs/getting-started)
+
++ Para correr los tests, ir a la carpeta tests en `js/tests` y ahí correr `npm test` o `yarn test`, como indica en las instrucciones [de la página web oficial de jest](https://jestjs.io/docs/getting-started)
