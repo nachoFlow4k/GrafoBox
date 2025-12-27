@@ -1,15 +1,27 @@
 class Grafo {
 
-    vertices;
-    aristas;
+    vertex;
+    edges;
 
     constructor() {
-        this.vertices = new Set();
-        this.aristas = new Set();
+        this.vertex = new Set();
+        this.edges = new Set();
     }
 
-    listarVertices() {
-        return "[" + Array.from(this.aristas).join(", ") + "]"
+    listVertex() {
+        return "[" + Array.from(this.edges).join(", ") + "]"
     }
 
+    addVertex(vertexName) {
+        if (this.vertex.has(vertexName)) {
+            throw new Error(descriptionErrorVertexAlreadyExists(vertexName))
+        } 
+        this.vertex.add(vertexName);
+    }
+
+    static descriptionErrorVertexAlreadyExists(vertexName) {
+        return "El vértice con el nombre " + vertexName + " ya existe ";
+    }
 }
+
+module.exports = Grafo;
