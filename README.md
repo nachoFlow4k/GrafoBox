@@ -12,3 +12,8 @@ Una vez que tenemos las bases, como podemos hacer para que sea mas ludico y peda
 Ideas Potenciales:
 Hacer que sea al estilo my little alchemy pero con grafos y la idea es desbloquear todas las propiedades
 Hacer algun modo para testearte si es que queres aprender alguna propiedad en especifico. IA?
+
+
+### Documentacion
+
+Para la documentación, usamos [MkDocs](https://www.mkdocs.org/)
