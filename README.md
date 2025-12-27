@@ -19,3 +19,9 @@ Hacer algun modo para testearte si es que queres aprender alguna propiedad en es
 + Para la documentación, usamos [MkDocs](https://www.mkdocs.org/)
 
 + Para poder correrlo localmente hacer `pip install -r requirements.txt`
+
+
+### Testing
+
++ Para el testing, integramos Jest como framework de testing
++ Es necesario instalar la dependencia por medio de npm siguiendo las instrucciones en [página web](https://jestjs.io/docs/getting-started)
