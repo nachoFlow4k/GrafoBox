@@ -30,6 +30,14 @@ class Grafo {
         this.edges.add({from: fromVertex, to: toVertex});
     }
 
+    removeVertex(vertexName) {
+        throw new Error("This method should be implemented")
+    }
+
+    removeEdge(fromVertex, toVertex) {
+        throw new Error("This method should be implemented")
+    }
+
     static descriptionErrorVertexAlreadyExists(vertexName) {
         return "El vértice con el nombre " + vertexName + " ya existe ";
     }
@@ -37,8 +45,6 @@ class Grafo {
     static descriptionErrorSomeVertexDoesntExist(fromVertexName, toVertexName) {
         return "La arista debería conectar a " + fromVertexName + " con " + toVertexName + " pero no existen en el grafo";
     }
-
-
 }
 
 module.exports = Grafo;
