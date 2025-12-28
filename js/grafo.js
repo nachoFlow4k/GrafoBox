@@ -9,7 +9,7 @@ class Grafo {
     }
 
     listVertex() {
-        return "[" + Array.from(this.edges).join(", ") + "]"
+        return "[" + Array.from(this.vertex).join(", ") + "]"
     }
 
     addVertex(vertexName) {
