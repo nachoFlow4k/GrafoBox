@@ -18,14 +18,14 @@ class Grafo {
 
     addVertex(vertexName) {
         if (this.vertex.has(vertexName)) {
-            throw new Error(descriptionErrorVertexAlreadyExists(vertexName))
+            throw new Error(Grafo.descriptionErrorVertexAlreadyExists(vertexName))
         } 
         this.vertex.add(vertexName);
     }
 
     addEdge(fromVertex, toVertex) {
         if (!this.vertex.has(fromVertex) || !this.vertex.has(toVertex)) {
-            throw new Error(descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
+            throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
         }
         this.edges.add({from: fromVertex, to: toVertex});
     }

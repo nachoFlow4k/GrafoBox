@@ -35,3 +35,27 @@ test('list edges with one edge should return a empty list', () => {
     //grafo.addEdge("v1", "v2");
     expect(grafo.listEdge()).toBe("[]")
 });
+
+test('addVertex with the same name throws error', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex("v1");
+    expect(() => {
+        grafo.addVertex("v1");
+    }).toThrow(Grafo.descriptionErrorVertexAlreadyExists("v1"));
+});
+
+test('addEdge without first vertex throws error', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex("v2");
+    expect(() => {
+        grafo.addEdge("v1", "v2");
+    }).toThrow(Grafo.descriptionErrorSomeVertexDoesntExist("v1", "v2"));
+});
+
+test('addEdge without first vertex throws error', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex("v1");
+    expect(() => {
+        grafo.addEdge("v1", "v2");
+    }).toThrow(Grafo.descriptionErrorSomeVertexDoesntExist("v1", "v2"));
+});
