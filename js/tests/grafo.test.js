@@ -59,3 +59,11 @@ test('addEdge without first vertex throws error', () => {
         grafo.addEdge("v1", "v2");
     }).toThrow(Grafo.descriptionErrorSomeVertexDoesntExist("v1", "v2"));
 });
+
+
+test('Degree of a vertex its the number of edges that ', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex("v1");
+    result = grafo.vertexDegree("v1");
+    expect(result).toBe("0")
+})

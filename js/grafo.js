@@ -38,6 +38,10 @@ class Grafo {
         throw new Error("This method should be implemented")
     }
 
+    vertexDegree(vertexName) {
+        
+    }
+
     static descriptionErrorVertexAlreadyExists(vertexName) {
         return "El vértice con el nombre " + vertexName + " ya existe ";
     }
