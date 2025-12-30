@@ -1,5 +1,3 @@
-
-
 const Grafo = require('.././grafo');
 
 test('New graph listVertex shoould return an empty list ', () => {

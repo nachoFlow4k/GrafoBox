@@ -14,4 +14,4 @@ export class Edge{
     }
 
     
-}require 
+}
