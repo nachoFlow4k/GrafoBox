@@ -14,7 +14,7 @@ class Grafo {
     }
 
     listVertex() {
-        return "[" + Array.from(this.vertex.name).sort().join(", ") + "]"
+        return "[" + Array.from(this.vertex).sort().join(", ") + "]"
     }
 
     listEdge() {
@@ -67,7 +67,7 @@ class Grafo {
     }
 
     numberOfEdges() {
-        throw new Error("This method should be implemented")
+        return this.edges.size
     }
 
     static descriptionErrorVertexAlreadyExists(vertexName) {
