@@ -8,6 +8,8 @@ function setup() {
   div.position(0, 0);
 
   describe('A gray square with the text "p5*js" written in its center.');
+
+  rect(0,0 , 55, 55);
 }
 
 function draw() {
