@@ -1,4 +1,4 @@
-export class Edge{
+class Edge{
     id;
     fromVertex;
     toVertex;
@@ -14,4 +14,7 @@ export class Edge{
     }
 
     
+}
+
+module.exports = Edge;
 }

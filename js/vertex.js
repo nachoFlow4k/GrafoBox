@@ -1,4 +1,4 @@
-export class Vertex{
+class Vertex{
     name;
     coordX;
     coordY;
