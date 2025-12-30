@@ -2,7 +2,7 @@ class Grafo {
 
     vertex;
     edges;
-    vertexNameCounter=0;
+    vertexNameCounter = 1;
     constructor() {
         this.vertex = new Set();
         this.edges = new Set();
@@ -16,19 +16,25 @@ class Grafo {
         return "[" + Array.from(this.edges).sort().join(", ") + "]"
     }
 
+    #newVertexName() {
+        return "v" + this.vertexNameCounter++;
+    }
+
     addVertex(coordX, coordY) {
 
-        const vertexName = "V" + this.vertexNameCounter++;
+        const vertexName = this.#newVertexName();
         nuevoVertex = new Vertex(vertexName, coordX, coordY)
     
         while (this.vertex.has(vertexName.name)) {
-            nuevoVertex.name = "V" + this.vertexNameCounter++;
+            nuevoVertex.name = this.#newVertexName();
         }
 
+        /*
         if (this.vertex.has(item.position=={x:coordX, y:coordY})){
             //despues deberiamos de analisar el tema de coliciones mas a fondo.  Dividir entre el punto central y el area del vertice.
             throw new Error("Ya existe un vertice en esa posicion")
         }
+        */
         this.vertex.add(vertexName);
     }
 
@@ -48,7 +54,7 @@ class Grafo {
     }
 
     vertexDegree(vertexName) {
-        
+        return 0;
     }
 
     static descriptionErrorVertexAlreadyExists(vertexName) {
