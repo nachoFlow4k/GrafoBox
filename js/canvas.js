@@ -1,14 +1,15 @@
 grafo = new Grafo()
+let selectIcon;
+function preload(){
+  selectIcon = loadImage("/selectIcono.png");
+}
 function setup() {
     windowWidth=1300
-    windowHeight=780
+    windowHeight=850
   createCanvas(windowWidth, windowHeight);
-    // Create a div element and set its position.
-  let div = createDiv('p5*js');
-  div.position(0, 0);
-
-  describe('A gray square with the text "p5*js" written in its center.');
-
+  
+  //image(selectIcon,0,0,10,10)
+ 
 
 }
 
