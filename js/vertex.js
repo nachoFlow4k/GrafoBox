@@ -5,13 +5,9 @@ class Vertex{
     position;
     color;
     size;
-<<<<<<< HEAD
     edges;
     conectedVertexes;
     weight;
-=======
-    weigth;
->>>>>>> refs/remotes/origin/main
     //nosotros cuando cliqueamos, queremos que se cree un nuevo objeto Vertex que tenga la posicion del mouse
     // y un nombre asignado arbitrariamente para empezar.  El color y tamanio se pueden heredar de una propiedad/regla mas general de la clase grafo.
     constructor(name, coordX, coordY){
