@@ -1,3 +1,5 @@
+import { Vertex } from './vertex.js';
+import { Edge } from './edge.js';
 class Grafo {
 
     vertex;
@@ -9,7 +11,7 @@ class Grafo {
     }
 
     listVertex() {
-        return "[" + Array.from(this.vertex).sort().join(", ") + "]"
+        return "[" + Array.from(this.vertex.name).sort().join(", ") + "]"
     }
 
     listEdge() {
@@ -74,42 +76,6 @@ class Grafo {
     }
 }
 
-class Vertex{
-    name;
-    coordX;
-    coordY;
-    position;
-    color;
-    size;
-    edges;
-    conectedVertexes;
-    //nosotros cuando cliqueamos, queremos que se cree un nuevo objeto Vertex que tenga la posicion del mouse
-    // y un nombre asignado arbitrariamente para empezar.  El color y tamanio se pueden heredar de una propiedad/regla mas general de la clase grafo.
-    constructor(name, coordX, coordY){
-        this.name = name
-        this.coordX = coordX
-        this.coordY = coordY
-        this.position = {x: coordX, y: coordY}
-        this.edges = new Set()
-        this.conectedVertexes = new Set()
-    }
-}
 
-class Edge{
-    id;
-    fromVertex;
-    toVertex;
-    weight;
-    color;
-    size;
-    constructor(fromVertex, toVertex){
-        this.nombre = fromVertex.name + "-" + toVertex.name
-        this.id=(fromVertex,toVertex)
-        this.fromVertex = fromVertex
-        this.toVertex = toVertex
-    
-    }
-
-}
 
 module.exports = Grafo;
