@@ -84,3 +84,12 @@ test('Number of vertex of an empty graph its 0 and when added a new edge its 1',
     grafo.addEdge("v1", "v1");
     expect(grafo.numberOfEdges()).toBe(1)
 })
+
+test('Multiple edges in the same direction are considered different', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex();
+    expect(grafo.numberOfEdges()).toBe(0)
+    grafo.addEdge("v1", "v1");
+    grafo.addEdge("v1", "v1");
+    expect(grafo.numberOfEdges()).toBe(2)
+})
