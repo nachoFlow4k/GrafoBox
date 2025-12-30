@@ -57,6 +57,14 @@ class Grafo {
         return 0;
     }
 
+    numberOfVertex() {
+        throw new Error("This method should be implemented")
+    }
+
+    numberOfEdges() {
+        throw new Error("This method should be implemented")
+    }
+
     static descriptionErrorVertexAlreadyExists(vertexName) {
         return "El vértice con el nombre " + vertexName + " ya existe ";
     }
@@ -102,6 +110,6 @@ class Edge{
     
     }
 
-    
 }
+
 module.exports = Grafo;
