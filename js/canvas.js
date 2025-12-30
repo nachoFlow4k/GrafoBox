@@ -1,7 +1,7 @@
 grafo = new Grafo()
 let selectIcon;
 function preload(){
-  selectIcon = loadImage("/selectIcono.png");
+selectIcon = loadImage("js/selectIcono.png");
 }
 function setup() {
     windowWidth=1300
