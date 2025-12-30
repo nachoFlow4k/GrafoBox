@@ -2,7 +2,7 @@ class Grafo {
 
     vertex;
     edges;
-
+    vertexNameCounter=0;
     constructor() {
         this.vertex = new Set();
         this.edges = new Set();
@@ -16,10 +16,19 @@ class Grafo {
         return "[" + Array.from(this.edges).sort().join(", ") + "]"
     }
 
-    addVertex(vertexName) {
-        if (this.vertex.has(vertexName)) {
-            throw new Error(Grafo.descriptionErrorVertexAlreadyExists(vertexName))
-        } 
+    addVertex(coordX, coordY) {
+
+        const vertexName = "V" + this.vertexNameCounter++;
+        nuevoVertex = new Vertex(vertexName, coordX, coordY)
+    
+        while (this.vertex.has(vertexName.name)) {
+            nuevoVertex.name = "V" + this.vertexNameCounter++;
+        }
+
+        if (this.vertex.has(item.position=={x:coordX, y:coordY})){
+            //despues deberiamos de analisar el tema de coliciones mas a fondo.  Dividir entre el punto central y el area del vertice.
+            throw new Error("Ya existe un vertice en esa posicion")
+        }
         this.vertex.add(vertexName);
     }
 
@@ -51,4 +60,42 @@ class Grafo {
     }
 }
 
+class Vertex{
+    name;
+    coordX;
+    coordY;
+    position;
+    color;
+    size;
+    edges;
+    conectedVertexes;
+    //nosotros cuando cliqueamos, queremos que se cree un nuevo objeto Vertex que tenga la posicion del mouse
+    // y un nombre asignado arbitrariamente para empezar.  El color y tamanio se pueden heredar de una propiedad/regla mas general de la clase grafo.
+    constructor(name, coordX, coordY){
+        this.name = name
+        this.coordX = coordX
+        this.coordY = coordY
+        this.position = {x: coordX, y: coordY}
+        this.edges = new Set()
+        this.conectedVertexes = new Set()
+    }
+}
+
+class Edge{
+    id;
+    fromVertex;
+    toVertex;
+    weight;
+    color;
+    size;
+    constructor(fromVertex, toVertex){
+        this.nombre = fromVertex.name + "-" + toVertex.name
+        this.id=(fromVertex,toVertex)
+        this.fromVertex = fromVertex
+        this.toVertex = toVertex
+    
+    }
+
+    
+}
 module.exports = Grafo;
