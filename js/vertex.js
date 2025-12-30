@@ -1,4 +1,4 @@
-export class Vertex{
+class Vertex{
     name;
     coordX;
     coordY;
@@ -18,3 +18,6 @@ export class Vertex{
         this.conectedVertexes = new Set()
     }
 }
+
+
+module.exports = Vertex;

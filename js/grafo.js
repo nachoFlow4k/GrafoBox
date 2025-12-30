@@ -1,5 +1,8 @@
-import { Vertex } from './vertex.js';
-import { Edge } from './edge.js';
+
+const Vertex = require('./vertex.js');
+const Edge = require('./edge.js');
+//import { Vertex } from './vertex.js';
+//import { Edge } from './edge.js';
 class Grafo {
 
     vertex;
