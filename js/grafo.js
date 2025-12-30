@@ -58,7 +58,7 @@ class Grafo {
     }
 
     numberOfVertex() {
-        throw new Error("This method should be implemented")
+        return this.vertex.size
     }
 
     numberOfEdges() {
