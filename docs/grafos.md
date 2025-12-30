@@ -45,3 +45,30 @@ TODO
 #### `vertexDegree`
 
 TODO
+
+
+## Vertex
+
+### Métodos de clase
+TODO
+### Atributos
+
+TODO
+
+### Métodos
+
+TODO
+
+## Edge
+
+TODO
+
+### Métodos de clase
+TODO
+### Atributos
+
+TODO
+
+### Métodos
+
+TODO
