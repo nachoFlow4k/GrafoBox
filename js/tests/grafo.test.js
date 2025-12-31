@@ -66,6 +66,9 @@ test('Degree of a vertex its the number of edges that ', () => {
     grafo.addVertex();
     result = grafo.vertexDegree("v1");
     expect(result).toBe(0)
+    grafo.addEdge("v1", "v1");
+    result = grafo.vertexDegree("v1");
+    expect(result).toBe(1)
 })
 
 test('Number of vertex of an empty graph its 0 and when added a new edge its 1', () => {

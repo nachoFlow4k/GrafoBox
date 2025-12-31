@@ -28,11 +28,13 @@ class Grafo {
     addVertex(coordX, coordY) {
 
         const vertexName = this.#newVertexName();
-        nuevoVertex = new Vertex(vertexName, coordX, coordY)
+        
+        /*nuevoVertex = new Vertex(vertexName, coordX, coordY)
     
         while (this.vertex.has(vertexName.name)) {
             nuevoVertex.name = this.#newVertexName();
         }
+            */
 
         /*
         if (this.vertex.has(item.position=={x:coordX, y:coordY})){
@@ -59,7 +61,8 @@ class Grafo {
     }
 
     vertexDegree(vertexName) {
-        return 0;
+        adjacentVertex = Array.from(this.edges).filter((vertex) => vertex.from == vertexName || vertex.to == vertexName)        
+        return adjacentVertex.length;
     }
 
     numberOfVertex() {
