@@ -65,6 +65,10 @@ class Grafo {
         return adjacentVertex.length;
     }
 
+    degree() {
+        throw new Error("This method should be implemented")
+    }
+
     numberOfVertex() {
         return this.vertex.size
     }
@@ -81,7 +85,6 @@ class Grafo {
         return "La arista debería conectar a " + fromVertexName + " con " + toVertexName + " pero no existen en el grafo";
     }
 }
-
 
 
 module.exports = Grafo;
