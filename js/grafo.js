@@ -54,6 +54,8 @@ class Grafo {
 
     removeVertex(vertexName) {
         this.vertex.delete(vertexName);
+        this.edges = new Set(Array.from(this.edges).filter((edge) => edge.from != vertexName && edge.to != vertexName))
+        
     }
 
     removeEdge(fromVertex, toVertex) {
@@ -61,7 +63,7 @@ class Grafo {
     }
 
     vertexDegree(vertexName) {
-        adjacentVertex = Array.from(this.edges).filter((vertex) => vertex.from == vertexName || vertex.to == vertexName)        
+        adjacentVertex = Array.from(this.edges).filter((edge) => edge.from == vertexName || edge.to == vertexName)        
         return adjacentVertex.length;
     }
 
