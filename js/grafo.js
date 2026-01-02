@@ -53,7 +53,7 @@ class Grafo {
     }
 
     removeVertex(vertexName) {
-        throw new Error("This method should be implemented")
+        this.vertex.delete(vertexName);
     }
 
     removeEdge(fromVertex, toVertex) {

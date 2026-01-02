@@ -94,3 +94,20 @@ test('Multiple edges in the same direction are considered different', () => {
     grafo.addEdge("v1", "v1");
     expect(grafo.numberOfEdges()).toBe(2)
 })
+
+test('Remove vertex of a graph have one less vertex', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex();
+    expect(grafo.numberOfVertex()).toBe(1)
+    grafo.removeVertex("v1");
+    expect(grafo.numberOfVertex()).toBe(0)
+})
+
+test('Remove vertex removes edges which are part of the vertex', () => {
+    grafo = new Grafo(); 
+    grafo.addVertex();
+    grafo.addEdge("v1", "v1");
+    expect(grafo.numberOfEdges()).toBe(1)
+    grafo.removeVertex("v1");
+    expect(grafo.numberOfEdges()).toBe(0)
+})
