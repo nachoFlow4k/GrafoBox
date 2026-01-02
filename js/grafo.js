@@ -8,6 +8,12 @@ class Grafo {
     vertex;
     edges;
     vertexNameCounter = 1;
+
+    static emptyMultiGraph() {
+
+        return new Grafo()
+    }
+
     constructor() {
         this.vertex = new Set();
         this.edges = new Set();
