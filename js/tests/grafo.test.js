@@ -43,7 +43,7 @@ test('addEdge without first vertex throws error', () => {
     }).toThrow(Grafo.descriptionErrorSomeVertexDoesntExist("v1", "v2"));
 });
 
-test('addEdge without first vertex throws error', () => {
+test('addEdge without second vertex throws error', () => {
     grafo = Grafo.emptyMultiGraph(); 
     grafo.addVertex();
     expect(() => {
