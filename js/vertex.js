@@ -27,4 +27,8 @@ class Vertex{
         throw new Error("This method should be implemented")}
     
     degree() {
-        throw new Error("This method should be implemented")}}
+        throw new Error("This method should be implemented")
+    }
+}
+
+module.exports = Vertex;
