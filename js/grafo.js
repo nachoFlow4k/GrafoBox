@@ -2,8 +2,8 @@
 const Vertex = require('./vertex.js');
 const Edge = require('./edge.js');
 
-class Grafo {
 
+class Grafo {
     vertex;
     edges;
     vertexNameCounter = 1;
@@ -19,7 +19,7 @@ class Grafo {
     }
 
     listVertex() {
-        return "[" + Array.from(this.vertex).sort().join(", ") + "]"
+        return "[" + Array.from(this.vertex).map(v => v.name).sort().join(", ") + "]"
     }
 
     listEdge() {
@@ -34,20 +34,22 @@ class Grafo {
 
         const vertexName = this.#newVertexName();
         
-        /*nuevoVertex = new Vertex(vertexName, coordX, coordY)
     
-        while (this.vertex.has(vertexName.name)) {
+        while (this.vertex.has(vertexName)) {
             nuevoVertex.name = this.#newVertexName();
         }
-            */
+               
+        
+        nuevoVertex = new Vertex(vertexName, coordX, coordY)
+        this.vertex.add(nuevoVertex);
 
         /*
         if (this.vertex.has(item.position=={x:coordX, y:coordY})){
             //despues deberiamos de analisar el tema de coliciones mas a fondo.  Dividir entre el punto central y el area del vertice.
             throw new Error("Ya existe un vertice en esa posicion")
         }
+       nuevoVertex = new Vertex(vertexName, coordX, coordY)
         */
-        this.vertex.add(vertexName);
     }
 
     addEdge(fromVertex, toVertex) {
