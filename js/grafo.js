@@ -14,17 +14,17 @@ class Grafo {
     }
 
     constructor() {
-        this.vertex = new Set();
+        this.vertex = new Map();
         this.edges = new Set();
     }
 
     listVertex() {
-        return "[" + Array.from(this.vertex).map(v => v.name).sort().join(", ") + "]"
+        return "[" + [...this.vertex.keys()].sort().join(", ") + "]"
     }
 
     listEdge() {
         return "[" + Array.from(this.edges).sort().join(", ") + "]"
-    }
+    } 
 
     #newVertexName() {
         return "v" + this.vertexNameCounter++;
@@ -40,7 +40,7 @@ class Grafo {
         }
     
         nuevoVertex = new Vertex(vertexName, coordX, coordY)
-        this.vertex.add(nuevoVertex);
+        this.vertex.set(vertexName, nuevoVertex);
 
         /*
         if (this.vertex.has(item.position=={x:coordX, y:coordY})){
@@ -52,7 +52,8 @@ class Grafo {
     }
 
     addEdge(fromVertex, toVertex) {
-        if (!Array.from(this.vertex).map(v => v.name).includes(fromVertex) || !Array.from(this.vertex).map(v => v.name).includes(toVertex)) {
+        
+        if (![...this.vertex.keys()].includes(fromVertex) || ![...this.vertex.keys()].includes(toVertex)) {
                 throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
             }
             this.edges.add({from: fromVertex, to: toVertex});
