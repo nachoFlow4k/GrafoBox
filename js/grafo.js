@@ -38,8 +38,7 @@ class Grafo {
         while (this.vertex.has(vertexName)) {
             nuevoVertex.name = this.#newVertexName();
         }
-               
-        
+    
         nuevoVertex = new Vertex(vertexName, coordX, coordY)
         this.vertex.add(nuevoVertex);
 
@@ -53,10 +52,10 @@ class Grafo {
     }
 
     addEdge(fromVertex, toVertex) {
-    if (!this.vertex.map(v => v.name).has(fromVertex) || !this.vertex.map(v => v.name).has(toVertex)) {
-            throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
-        }
-        this.edges.add({from: fromVertex, to: toVertex});
+        if (!Array.from(this.vertex).map(v => v.name).includes(fromVertex) || !Array.from(this.vertex).map(v => v.name).includes(toVertex)) {
+                throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
+            }
+            this.edges.add({from: fromVertex, to: toVertex});
     }
 
     removeVertex(vertexName) {
