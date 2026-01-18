@@ -53,7 +53,7 @@ class Grafo {
     }
 
     addEdge(fromVertex, toVertex) {
-        if (!this.vertex.has(fromVertex) || !this.vertex.has(toVertex)) {
+    if (!this.vertex.map(v => v.name).has(fromVertex) || !this.vertex.map(v => v.name).has(toVertex)) {
             throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
         }
         this.edges.add({from: fromVertex, to: toVertex});
