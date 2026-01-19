@@ -77,7 +77,7 @@ class Grafo {
     }
 
     degree() {
-        throw new Error("This method should be implemented")
+        return this.edges.size * 2
     }
 
     numberOfVertex() {
