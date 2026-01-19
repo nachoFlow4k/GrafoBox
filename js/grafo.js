@@ -73,12 +73,20 @@ class Grafo {
         throw new Error("This method should be implemented")
     }
 
+    openNeighbourhood(vertexName) {
+        const array = Array.from(this.edges).filter((edge) => edge.from == vertexName || edge.to == vertexName);
+        return new Set(array)
+    }
+
+    closedNeighbourhood(vertexName) {
+        return this.openNeighbourhood(vertexName).add(vertexName)
+    }
+
     vertexDegree(vertexName) {
         if (!this.vertices.has(vertexName)) {
             throw new Error(Grafo.descriptionErrorNonexistingVertex(vertexName));
         }
-        adjacentVertex = Array.from(this.edges).filter((edge) => edge.from == vertexName || edge.to == vertexName)        
-        return adjacentVertex.length;
+        return this.openNeighbourhood(vertexName).size;
     }
 
     degree() {
@@ -102,6 +110,10 @@ class Grafo {
     }
 
     adjacencyList() {
+        for (const vertexName of this.vertices.keys()) {
+            res.push(this.vertexDegree(vertexName))
+        }
+
         throw new Error("This method should be implemented")
     }
 
