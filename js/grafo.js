@@ -56,7 +56,7 @@ class Grafo {
            throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
         }
         if (fromVertex == toVertex) {
-           throw new Error(Grafo.descriptionErrorCannotAddVertexBetweenTheSameVertex(fromVertex, toVertex));
+           throw new Error(Grafo.descriptionErrorCannotAddVertexBetweenTheSameVertex(fromVertex));
         }
         this.edges.add({from: fromVertex, to: toVertex});
     }
@@ -97,7 +97,7 @@ class Grafo {
     }
 
     static descriptionErrorCannotAddVertexBetweenTheSameVertex(vertexName) {
-        return "La arista no puede conectar consigo mismo al vértice " + fromVertexName;
+        return "La arista no puede conectar consigo mismo al vértice " + vertexName;
     }
 }
 
