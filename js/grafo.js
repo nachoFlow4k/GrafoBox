@@ -4,7 +4,7 @@ const Edge = require('./edge.js');
 
 
 class Grafo {
-    vertex;
+    vertices;
     edges;
     vertexNameCounter = 1;
 
@@ -14,12 +14,12 @@ class Grafo {
     }
 
     constructor() {
-        this.vertex = new Map();
+        this.vertices = new Map();
         this.edges = new Set();
     }
 
     listVertex() {
-        return "[" + [...this.vertex.keys()].sort().join(", ") + "]"
+        return "[" + [...this.vertices.keys()].sort().join(", ") + "]"
     }
 
     listEdge() {
@@ -35,12 +35,12 @@ class Grafo {
         const vertexName = this.#newVertexName();
         
     
-        while (this.vertex.has(vertexName)) {
+        while (this.vertices.has(vertexName)) {
             nuevoVertex.name = this.#newVertexName();
         }
     
         nuevoVertex = new Vertex(vertexName, coordX, coordY)
-        this.vertex.set(vertexName, nuevoVertex);
+        this.vertices.set(vertexName, nuevoVertex);
 
         /*
         if (this.vertex.has(item.position=={x:coordX, y:coordY})){
@@ -52,7 +52,7 @@ class Grafo {
     }
 
     addEdge(fromVertex, toVertex) {
-        if (![...this.vertex.keys()].includes(fromVertex) || ![...this.vertex.keys()].includes(toVertex)) {
+        if (![...this.vertices.keys()].includes(fromVertex) || ![...this.vertices.keys()].includes(toVertex)) {
            throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
         }
         if (fromVertex == toVertex) {
@@ -62,10 +62,10 @@ class Grafo {
     }
 
     removeVertex(vertexName) {
-        if (!this.vertex.has(vertexName)) {
+        if (!this.vertices.has(vertexName)) {
             throw new Error(Grafo.descriptionErrorNonexistingVertex(vertexName));
         }
-        this.vertex.delete(vertexName);
+        this.vertices.delete(vertexName);
         this.edges = new Set(Array.from(this.edges).filter((edge) => edge.from != vertexName && edge.to != vertexName))
     }
 
@@ -74,7 +74,7 @@ class Grafo {
     }
 
     vertexDegree(vertexName) {
-        if (!this.vertex.has(vertexName)) {
+        if (!this.vertices.has(vertexName)) {
             throw new Error(Grafo.descriptionErrorNonexistingVertex(vertexName));
         }
         adjacentVertex = Array.from(this.edges).filter((edge) => edge.from == vertexName || edge.to == vertexName)        
@@ -86,7 +86,7 @@ class Grafo {
     }
 
     numberOfVertex() {
-        return this.vertex.size
+        return this.vertices.size
     }
 
     numberOfEdges() {
@@ -94,7 +94,11 @@ class Grafo {
     }
 
     degreeSequence() {
-        
+        let res = []
+        for (const vertexName of this.vertices.keys()) {
+            res.push(this.vertexDegree(vertexName))
+        }
+        return res.sort().reverse()
     }
 
     adjacencyList() {
