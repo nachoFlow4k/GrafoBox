@@ -109,7 +109,12 @@ test('Remove vertex removes edges which are part of the vertex', () => {
     expect(grafo.numberOfEdges()).toBe(0)
 })
 
-test('Degree of graph ', () => {
+test('Degree of empty graph is zero', () => {
+    grafo = Grafo.simpleGraph();
+    expect(grafo.degree()).toBe(0);
+});
+
+test('Degree of graph its the number of edges times 2', () => {
     grafo = Grafo.simpleGraph();
     
     grafo.addVertex();
@@ -117,3 +122,47 @@ test('Degree of graph ', () => {
     grafo.addEdge("v1", "v2");
     expect(grafo.degree()).toBe(2)
 })
+
+test('Removing a non-existing vertex throws error', () => {
+    grafo = Grafo.simpleGraph();
+    expect(() => {
+        grafo.removeVertex("v1");
+    }).toThrow(Grafo.descriptionErrorNonexistingVertex("v1"));
+});
+
+test('Degree of non-existing vertex throws error', () => {
+    grafo = Grafo.simpleGraph();
+    expect(() => {
+        grafo.vertexDegree("v1");
+    }).toThrow(Grafo.descriptionErrorNonexistingVertex("v1"));
+});
+
+test('Degree sequence is sorted descending', () => {
+    grafo = Grafo.simpleGraph();
+    grafo.addVertex();
+    grafo.addVertex();
+    grafo.addVertex();
+    grafo.addEdge("v1", "v2");
+    grafo.addEdge("v1", "v3");
+
+    expect(grafo.degreeSequence()).toEqual([2, 1, 1]);
+});
+
+test('Adjacency list is correct', () => {
+    grafo = Grafo.simpleGraph();
+    grafo.addVertex();
+    grafo.addVertex();
+    grafo.addEdge("v1", "v2");
+
+    expect(grafo.adjacencyList()).toEqual({
+        v1: ["v2"],
+        v2: ["v1"]
+    });
+});
+
+/*
+test('', () => {
+    grafo = Grafo.simpleGraph();
+    
+})
+*/
