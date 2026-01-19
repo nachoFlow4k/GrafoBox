@@ -115,5 +115,5 @@ test('Degree of graph ', () => {
     grafo.addVertex();
     grafo.addVertex();
     grafo.addEdge("v1", "v2");
-    expect(grafo.degree).toBe(2)
+    expect(grafo.degree()).toBe(2)
 })
