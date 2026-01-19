@@ -8,7 +8,7 @@ class Grafo {
     edges;
     vertexNameCounter = 1;
 
-    static emptyMultiGraph() {
+    static simpleGraph() {
 
         return new Grafo()
     }
@@ -52,11 +52,13 @@ class Grafo {
     }
 
     addEdge(fromVertex, toVertex) {
-        
         if (![...this.vertex.keys()].includes(fromVertex) || ![...this.vertex.keys()].includes(toVertex)) {
-                throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
-            }
-            this.edges.add({from: fromVertex, to: toVertex});
+           throw new Error(Grafo.descriptionErrorSomeVertexDoesntExist(fromVertex, toVertex));
+        }
+        if (fromVertex == toVertex) {
+           throw new Error(Grafo.descriptionErrorCannotAddVertexBetweenTheSameVertex(fromVertex, toVertex));
+        }
+        this.edges.add({from: fromVertex, to: toVertex});
     }
 
     removeVertex(vertexName) {
@@ -92,6 +94,10 @@ class Grafo {
 
     static descriptionErrorSomeVertexDoesntExist(fromVertexName, toVertexName) {
         return "La arista debería conectar a " + fromVertexName + " con " + toVertexName + " pero no existen en el grafo";
+    }
+
+    static descriptionErrorCannotAddVertexBetweenTheSameVertex(vertexName) {
+        return "La arista no puede conectar consigo mismo al vértice " + fromVertexName;
     }
 }
 
