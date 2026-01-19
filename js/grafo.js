@@ -62,6 +62,9 @@ class Grafo {
     }
 
     removeVertex(vertexName) {
+        if (!this.vertex.has(vertexName)) {
+            throw new Error(Grafo.descriptionErrorNonexistingVertex(vertexName));
+        }
         this.vertex.delete(vertexName);
         this.edges = new Set(Array.from(this.edges).filter((edge) => edge.from != vertexName && edge.to != vertexName))
     }
@@ -71,6 +74,9 @@ class Grafo {
     }
 
     vertexDegree(vertexName) {
+        if (!this.vertex.has(vertexName)) {
+            throw new Error(Grafo.descriptionErrorNonexistingVertex(vertexName));
+        }
         adjacentVertex = Array.from(this.edges).filter((edge) => edge.from == vertexName || edge.to == vertexName)        
         return adjacentVertex.length;
     }
@@ -87,6 +93,14 @@ class Grafo {
         return this.edges.size
     }
 
+    degreeSequence() {
+        
+    }
+
+    adjacencyList() {
+        throw new Error("This method should be implemented")
+    }
+
     static descriptionErrorVertexAlreadyExists(vertexName) {
         return "El vértice con el nombre " + vertexName + " ya existe ";
     }
@@ -97,6 +111,10 @@ class Grafo {
 
     static descriptionErrorCannotAddVertexBetweenTheSameVertex(vertexName) {
         return "La arista no puede conectar consigo mismo al vértice " + vertexName;
+    }
+    
+    static descriptionErrorNonexistingVertex(vertexName) {
+        return "No se puede acceder al inexistente vértice " + vertexName
     }
 }
 
