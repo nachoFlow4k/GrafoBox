@@ -16,6 +16,9 @@ const sketch = (p) => {
 
   p.preload = function () {
     selectIcon = p.loadImage("./assets/selectIcono.png");
+    edgeIcon = loadImage("./assets/edgeIcono.png");
+    vertexIcon = loadImage("./assets/vertexIcono.png");
+    trashIcon = loadImage("./assets/trashIcono.png");
   };
 
   function drawIcon(imagagePath, posicionRelativa, positionY) {
@@ -27,8 +30,10 @@ const sketch = (p) => {
 
   p.draw = () => {
     p.background(220);
-    drawIcon(selectIcon, x, 0);
-    drawIcon(selectIcon, x + 1, 0);
+    drawIcon(selectIcon, x, 650);
+    drawIcon(edgeIcon, x + 1, 650);
+    drawIcon(vertexIcon, x + 2, 650);
+    drawIcon(trashIcon, x + 3, 650);
     p.noLoop();
   };
 
