@@ -4,6 +4,7 @@ let minSizeIcon = 20; // minimum size in pixels
 var canvasWidth = 1000;
 var canvasHeight = 1000;
 var nodeSize = 30;
+
 function preload() {
   selectIcon = loadImage("./assets/selectIcono.png");
 }
@@ -23,11 +24,12 @@ function draw() {
   drawIcon(selectIcon, x, 0);
 
   drawIcon(selectIcon, x + 1, 0);
-  noloop();
 }
 
 function mouseClicked() {
   // Draw a circle where you click
   fill(255, 0, 0);
   circle(mouseX, mouseY, nodeSize);
+  console.log(Grafo);
+  console.log(graph);
 }

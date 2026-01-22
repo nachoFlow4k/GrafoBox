@@ -17,7 +17,7 @@ class Vertex{
         this.position = {x: coordX, y: coordY}
     }
 
-    conecciones(vertexName) {
+    conexiones(vertexName) {
         throw new Error("This method should be implemented")}
 
     pesoSalida(vertexName) {

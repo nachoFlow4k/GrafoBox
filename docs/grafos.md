@@ -20,7 +20,7 @@ TODO
 
 #### `listVertex`
 
-Devuelve un string de la forma _[primer vertice, segundo vertice, ..., ultimo vertice]_
+Devuelve un string de la forma _[ segundo vertice, ..., ultimo vertice]_
 
 #### `listEdge`
 
@@ -28,7 +28,7 @@ TODO
 
 #### `addVertex`
 
-TODO 
+TODO
 
 #### `addEdge`
 
@@ -46,11 +46,12 @@ TODO
 
 TODO
 
-
 ## Vertex
 
 ### Métodos de clase
+
 TODO
+
 ### Atributos
 
 TODO
@@ -64,7 +65,9 @@ TODO
 TODO
 
 ### Métodos de clase
+
 TODO
+
 ### Atributos
 
 TODO

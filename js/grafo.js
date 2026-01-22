@@ -110,11 +110,12 @@ class Grafo {
     }
 
     adjacencyList() {
+        let res = new Object();
         for (const vertexName of this.vertices.keys()) {
-            res.push(this.vertexDegree(vertexName))
+            res[vertexName] = this.openNeighbourhood(vertexName)
         }
+        return res;
 
-        throw new Error("This method should be implemented")
     }
 
     static descriptionErrorVertexAlreadyExists(vertexName) {
