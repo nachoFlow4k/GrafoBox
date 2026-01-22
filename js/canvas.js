@@ -3,7 +3,13 @@ import Grafo from "./grafo.js";
 const sketch = (p) => {
   let graph;
   let selectIcon;
+  let edgeIcon;
+  let vertexIcon;
+  let trashIcon;
+  let nodeIcon;
+
   let x = 0;
+
   let minSizeIcon = 20; // minimum size in pixels
   var canvasWidth = 1000;
   var canvasHeight = 1000;
@@ -16,9 +22,9 @@ const sketch = (p) => {
 
   p.preload = function () {
     selectIcon = p.loadImage("./assets/selectIcon.png");
-    edgeIcon = loadImage("./assets/edgeIcon.png");
-    nodeIcon = loadImage("./assets/nodeIcon.png");
-    trashIcon = loadImage("./assets/trashIcon.png");
+    edgeIcon = p.loadImage("./assets/edgeIcon.png");
+    nodeIcon = p.loadImage("./assets/nodeIcon.png");
+    trashIcon = p.loadImage("./assets/trashIcon.png");
   };
 
   function drawIcon(imagagePath, posicionRelativa, positionY) {
