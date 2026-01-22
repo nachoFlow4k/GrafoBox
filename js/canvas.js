@@ -15,9 +15,9 @@ const sketch = (p) => {
   };
 
   p.preload = function () {
-    selectIcon = p.loadImage("./assets/selectIcono.png");
-    edgeIcon = loadImage("./assets/edgeIcono.png");
-    vertexIcon = loadImage("./assets/vertexIcono.png");
+    selectIcon = p.loadImage("./assets/selectIcon.png");
+    edgeIcon = loadImage("./assets/edgeIcon.png");
+    nodeIcon = loadImage("./assets/nodeIcon.png");
     trashIcon = loadImage("./assets/trashIcono.png");
   };
 
