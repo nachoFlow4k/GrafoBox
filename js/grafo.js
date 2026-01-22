@@ -29,12 +29,11 @@ export default class Grafo {
 
   addVertex(coordX, coordY) {
     const vertexName = this.#newVertexName();
-
     while (this.vertices.has(vertexName)) {
       nuevoVertex.name = this.#newVertexName();
     }
 
-    nuevoVertex = new Vertex(vertexName, coordX, coordY);
+    let nuevoVertex = new Vertex(vertexName, coordX, coordY);
     this.vertices.set(vertexName, nuevoVertex);
 
     /*
@@ -147,4 +146,3 @@ export default class Grafo {
     return "No se puede acceder al inexistente vértice " + vertexName;
   }
 }
-

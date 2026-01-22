@@ -1,5 +1,26 @@
 import Grafo from "./grafo.js";
 
+const sketch = (p) => {
+  let graph;
+
+  p.setup = () => {
+    p.createCanvas(1000, 1000);
+    graph = Grafo.simpleGraph();
+  };
+
+  p.draw = () => {
+    p.background(220);
+  };
+
+  p.mouseClicked = () => {
+    graph.addVertex();
+    console.log(graph);
+  };
+};
+
+new p5(sketch);
+
+/*
 let selectIcon;
 let x = 0;
 let minSizeIcon = 20; // minimum size in pixels
@@ -53,3 +74,6 @@ function iconNegativo(imagenPath) {
   
     imagenPath.updatePixels();
 }
+
+*/
+
