@@ -1,3 +1,5 @@
+import Grafo from "./grafo.js";
+
 let selectIcon;
 let x = 0;
 let minSizeIcon = 20; // minimum size in pixels
