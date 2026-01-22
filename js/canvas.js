@@ -12,8 +12,9 @@ function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
 
-function drawIcon(imagagePath, positionX, positionY) {
+function drawIcon(imagagePath, item, positionY) {
   let size = max(minSizeIcon, 0.1 * min(canvasWidth, canvasHeight));
+  let positionX = item * size;
   image(imagagePath, positionX, positionY, size, size);
 }
 
@@ -21,7 +22,7 @@ function draw() {
   background(220);
   drawIcon(selectIcon, x, 0);
 
-  drawIcon(selectIcon, x + 40, 0);
+  drawIcon(selectIcon, x + 1, 0);
   noloop();
 }
 
