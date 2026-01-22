@@ -5,26 +5,29 @@ var canvasWidth = 1000;
 var canvasHeight = 1000;
 var nodeSize = 30;
 
+// Cargamos las imagenes de los iconos y otros elementos graficos
 function preload() {
   selectIcon = loadImage("./assets/selectIcono.png");
 }
+
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
 
-function drawIcon(imagagePath, item, positionY) {
+//Funcion para dibujar Icons, toma el path, su posicion en relacion a otros iconos y la posicion en Y
+function drawIcon(imagagePath, posicionRelativa, positionY) {
+  //Tecnica para escalar el icono segun el tamaño del canvas
   let size = max(minSizeIcon, 0.1 * min(canvasWidth, canvasHeight));
-  let positionX = item * size;
+  let positionX = posicionRelativa * size;
   image(imagagePath, positionX, positionY, size, size);
 }
 
 function draw() {
   background(220);
-  iconNegativo(selectIcon);
   drawIcon(selectIcon, x, 0);
-  
   drawIcon(selectIcon, x + 1, 0);
+  noLoop();
 }
 
 function mouseClicked() {
@@ -33,6 +36,8 @@ function mouseClicked() {
   circle(mouseX, mouseY, nodeSize);
   console.log(Grafo);
   console.log(graph);
+    
+  
 }
 
 
@@ -48,6 +53,5 @@ function iconNegativo(imagenPath) {
         imagenPath.pixels[i + 1] = 255-g; // New G
         imagenPath.pixels[i + 2] = 255-b; // New B
     }
-  
     imagenPath.updatePixels();
 }
