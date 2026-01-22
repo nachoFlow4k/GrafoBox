@@ -8,6 +8,9 @@ var nodeSize = 30;
 // Cargamos las imagenes de los iconos y otros elementos graficos
 function preload() {
   selectIcon = loadImage("./assets/selectIcono.png");
+  edgeIcon = loadImage("./assets/edgeIcono.png");
+  vertexIcon = loadImage("./assets/vertexIcono.png");
+  trashIcon = loadImage("./assets/trashIcono.png");
 }
 
 
@@ -26,7 +29,9 @@ function drawIcon(imagagePath, posicionRelativa, positionY) {
 function draw() {
   background(220);
   drawIcon(selectIcon, x, 650);
-  drawIcon(selectIcon, x + 1, 650);
+  drawIcon(edgeIcon, x + 1, 650);
+  drawIcon(vertexIcon, x + 2, 650);
+  drawIcon(trashIcon, x + 3, 650);
   noLoop();
 }
 
