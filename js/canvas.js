@@ -1,27 +1,20 @@
-//Variables
-
-let img; // Declare a variable to hold the image
-const widthCanvas = 100;
-const heightCanvas = 100;
+let kitten;
+let x = 0;
+let minSizeIcon = 20; // minimum size in pixels
+var canvasWidth = 100;
+var canvasHeight = 100;
 
 function preload() {
-  // Load the image before the setup function runs
-  img = loadImage("./assets/selectIcono.png", () => {
-    console.log(img.width, img.height);
-  });
+  kitten = loadImage("./assets/selectIcono.png");
 }
 
 function setup() {
-  createCanvas(widthCanvas, heightCanvas);
-  background(200);
+  createCanvas(canvasWidth, canvasHeight);
+}
 
-  const scale = min(width / img.width, height / img.height);
-  const w = img.width * scale;
-  const h = img.height * scale;
+function draw() {
+  background(220);
+  let size = max(minSizeIcon, 0.1 * min(canvasWidth, canvasHeight));
 
-  const x = (width - w) / 2;
-  const y = (height - h) / 2;
-  console.log(x, y, w, h);
-  image(img, x, y, w, h);
-  noLoop();
+  image(kitten, x, 0, size, size);
 }
