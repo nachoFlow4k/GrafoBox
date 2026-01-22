@@ -18,7 +18,7 @@ const sketch = (p) => {
     selectIcon = p.loadImage("./assets/selectIcon.png");
     edgeIcon = loadImage("./assets/edgeIcon.png");
     nodeIcon = loadImage("./assets/nodeIcon.png");
-    trashIcon = loadImage("./assets/trashIcono.png");
+    trashIcon = loadImage("./assets/trashIcon.png");
   };
 
   function drawIcon(imagagePath, posicionRelativa, positionY) {
