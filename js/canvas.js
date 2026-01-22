@@ -1,27 +1,27 @@
-grafo = new Grafo()
-let selectIcon;
-function preload(){
-selectIcon = loadImage("assets/selectIcono.png");
+//Variables
+
+let img; // Declare a variable to hold the image
+const widthCanvas = 100;
+const heightCanvas = 100;
+
+function preload() {
+  // Load the image before the setup function runs
+  img = loadImage("./assets/selectIcono.png", () => {
+    console.log(img.width, img.height);
+  });
 }
+
 function setup() {
-    windowWidth=1300
-    windowHeight=850
-  createCanvas(windowWidth, windowHeight);
-}
+  createCanvas(widthCanvas, heightCanvas);
+  background(200);
 
-function draw() {
-  if (mouseIsPressed) {
-    //circle(mouseX, mouseY, 25);
-  }
-  image(selectIcon,0,0,50,50)
-}
+  const scale = min(width / img.width, height / img.height);
+  const w = img.width * scale;
+  const h = img.height * scale;
 
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-}
-
-function mouseClicked(event) {
-    console.log(event);
-    
-    circle(mouseX, mouseY, 25);
+  const x = (width - w) / 2;
+  const y = (height - h) / 2;
+  console.log(x, y, w, h);
+  image(img, x, y, w, h);
+  noLoop();
 }
