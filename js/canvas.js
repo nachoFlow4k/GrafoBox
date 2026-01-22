@@ -25,8 +25,8 @@ function drawIcon(imagagePath, posicionRelativa, positionY) {
 
 function draw() {
   background(220);
-  drawIcon(selectIcon, x, 0);
-  drawIcon(selectIcon, x + 1, 0);
+  drawIcon(selectIcon, x, 650);
+  drawIcon(selectIcon, x + 1, 650);
   noLoop();
 }
 
