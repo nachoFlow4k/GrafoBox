@@ -1,20 +1,32 @@
-let kitten;
+let selectIcon;
 let x = 0;
 let minSizeIcon = 20; // minimum size in pixels
-var canvasWidth = 100;
-var canvasHeight = 100;
-
+var canvasWidth = 1000;
+var canvasHeight = 1000;
+var nodeSize = 30;
 function preload() {
-  kitten = loadImage("./assets/selectIcono.png");
+  selectIcon = loadImage("./assets/selectIcono.png");
 }
 
 function setup() {
   createCanvas(canvasWidth, canvasHeight);
 }
 
+function drawIcon(imagagePath, positionX, positionY) {
+  let size = max(minSizeIcon, 0.1 * min(canvasWidth, canvasHeight));
+  image(imagagePath, positionX, positionY, size, size);
+}
+
 function draw() {
   background(220);
-  let size = max(minSizeIcon, 0.1 * min(canvasWidth, canvasHeight));
+  drawIcon(selectIcon, x, 0);
 
-  image(kitten, x, 0, size, size);
+  drawIcon(selectIcon, x + 40, 0);
+  noloop();
+}
+
+function mouseClicked() {
+  // Draw a circle where you click
+  fill(255, 0, 0);
+  circle(mouseX, mouseY, nodeSize);
 }
