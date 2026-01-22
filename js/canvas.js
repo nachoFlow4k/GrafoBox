@@ -38,7 +38,7 @@ const sketch = (p) => {
     p.background(220);
     drawIcon(selectIcon, x, 650);
     drawIcon(edgeIcon, x + 1, 650);
-    drawIcon(vertexIcon, x + 2, 650);
+    drawIcon(nodeIcon, x + 2, 650);
     drawIcon(trashIcon, x + 3, 650);
     p.noLoop();
   };
